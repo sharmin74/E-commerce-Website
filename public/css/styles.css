@@ -1,4 +1,12 @@
+html {
+    overflow-x: hidden;
+}
+
 #footer {
-  margin-top: 400px;
-  text-align: center;
+    margin-top: 400px;
+    text-align: center;
+}
+
+img {
+    height: 14rem;
 }
