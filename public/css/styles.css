@@ -1,12 +1,233 @@
+/* ----------GENERAL STYLING----------  */
+
 html {
     overflow-x: hidden;
 }
 
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+
+/* ----------NAVBAR STYLING----------  */
+
+
+/* ----------CAROUSEL STYLE----------  */
+
+
+/* .carousel-caption {
+    text-align: left;
+}*/
+
+.carousel-caption h2 {
+    background-color: #006eff;
+    width: 300px;
+    padding: 12px 25px;
+    letter-spacing: 3px;
+}
+
+.carousel-caption h5 {
+    background-color: white;
+    margin-bottom: 6rem;
+    width: 180px;
+    padding: 8px 10px;
+    letter-spacing: 2px;
+}
+
+.carousel-caption h5 a {
+    color: black;
+    text-decoration: none
+}
+
+
+/* ----------FOOTER STYLING----------  */
+
 #footer {
     margin-top: 400px;
+    text-align: left;
+    height: auto;
+    background-color: #000000;
+    color: white;
+}
+
+#footer p {
+    color: #909898;
+}
+
+#footer a {
+    color: #909898;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: white;
+}
+
+#footer i:hover {
+    color: white;
+}
+
+.footer-data {
+    text-align: left;
+    padding: 50px 60px;
+}
+
+.fa_custom {
+    color: #909898;
+    padding: 10px;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 15px 50px;
+}
+
+.footer-copyright p {
+    margin-bottom: 0;
+}
+
+.footer-copyright a {
+    color: #909898;
+}
+
+.footer-copyright a:hover {
+    color: #909898;
+    text-decoration: underline;
+}
+
+
+/* ----------INDEX PAGE STYLING---------- */
+
+img {
+    height: 15rem;
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+
+
+/* product information page styling */
+
+.product-page {
+    padding: 100px 0;
+}
+
+
+/* images */
+
+.images {
+    display: inline-block;
+    margin-bottom: 100px;
+}
+
+.small-images {
+    display: inline-block;
+    padding: 30px;
+    text-align: center;
+    padding-right: 100px;
+}
+
+.small-images img {
+    margin-bottom: 20px;
+    height: 100px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.big-image {
+    height: 500px;
+    margin-top: 0;
+    position: absolute;
+    margin-bottom: 200px;
+}
+
+.product-details {
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.product-details h2 {
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: black;
+    width: 700px;
+}
+
+.product-details select {
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: #eee;
+    border: 0;
+}
+
+.product-details input {
+    background-color: #eee;
+    padding: 10px;
+    border: 0;
+    width: 40px;
+}
+
+.product-details button {
+    letter-spacing: 2px;
+}
+
+.product-description {
+    width: 700px;
+    line-height: 2;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.share-product {
     text-align: center;
 }
 
-img {
-    height: 14rem;
+.share-product i {
+    margin-left: 10px;
+}
+
+.reviews {
+    margin-top: 100px;
+}
+
+.reviews i {
+    margin-left: 5px;
+}
+
+.reviews a {
+    margin-left: 20px;
+}
+
+.peoples-reviews {
+    margin-bottom: 150px;
+}
+
+.stars {
+    color: #ffc60b;
+}
+
+.peoples-reviews h6 {
+    margin-top: 40px;
+    font-weight: 700;
+}
+
+.product-recommendation {
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 0;
+}
+
+.product-recommendation h3 {
+    margin-bottom: 40px;
+}
+
+.product-recommendation img {
+    height: 250px;
+}
+
+.product-recommendation .recommendation {
+    padding: 10px;
 }
