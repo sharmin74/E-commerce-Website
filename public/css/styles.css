@@ -29,8 +29,8 @@ body {
 .carousel-caption h5 {
     background-color: white;
     margin-bottom: 6rem;
-    width: 180px;
-    padding: 8px 10px;
+    width: 200px;
+    padding: 10px 10px;
     letter-spacing: 2px;
 }
 
@@ -113,8 +113,8 @@ img {
 }
 
 .small-images img {
-    margin-bottom: 20px;
-    height: 100px;
+    margin-bottom: 10px;
+    height: 120px;
     opacity: 0.8;
     cursor: pointer;
 }
@@ -196,6 +196,18 @@ img {
         height: 310px;
     }
     .small-images img {
-        height: 75px;
+        padding: 10px 5px;
+        height: 90px;
+        margin: 0;
+    }
+    .product-details {
+        text-align: center;
+    }
+    .product-details h2 {
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+    .product-page {
+        padding: 50px 0;
     }
 }
