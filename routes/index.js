@@ -3,17 +3,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const Products = require('../models/Products');
-<<<<<<< HEAD
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const multer = require('multer');
 const Cart = require('../models/Cart');
 const { resolve } = require('path');
-=======
-
-const multer = require('multer');
-const Cart = require('../models/Cart');
->>>>>>> 5bd3fd3133bdde4dec614a655ca4f2d518ea6232
 
 // setting up multer for images 
 const storage = multer.diskStorage({
@@ -82,12 +76,8 @@ router.get('/shopping-cart', (req, res) => {
     var cart = new Cart(req.session.cart);
     res.render('shoppingCart', {
         products: cart.generateArray(),
-<<<<<<< HEAD
         totalPrice: cart.totalPrice,
         STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY
-=======
-        totalPrice: cart.totalPrice
->>>>>>> 5bd3fd3133bdde4dec614a655ca4f2d518ea6232
     });
 });
 
@@ -124,7 +114,6 @@ router.get('/remove-from-cart/:id', (req, res) => {
     res.redirect('/shopping-cart');
 });
 
-<<<<<<< HEAD
 
 // SEARCH FUNCTIONALITY 
 function escapeRegex(text) {
@@ -144,10 +133,6 @@ router.get('/search', (req, res) => {
         return;
     }
      res.render('search', { Products: "" });
-=======
-router.get('/search', (req, res) => {
-    res.render('search');
->>>>>>> 5bd3fd3133bdde4dec614a655ca4f2d518ea6232
 });
 
 router.get('/shop', (req, res) => {
@@ -170,7 +155,6 @@ router.get('/eachProduct', (req, res) => {
 });
 
 
-<<<<<<< HEAD
 // setting up stripe routes 
 router.post("/create-checkout-session", async (req, res) => {
     let createArray = new Promise((resolve, reject) => {
@@ -240,8 +224,6 @@ router.get('/failure', (req, res) => {
 
 
 
-=======
->>>>>>> 5bd3fd3133bdde4dec614a655ca4f2d518ea6232
 // ------------------------------ADMIN PAGE----------------------------------------- 
 router.get('/admin', (req, res) => {
     res.render('admin');

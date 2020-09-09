@@ -6,10 +6,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5bd3fd3133bdde4dec614a655ca4f2d518ea6232
 // setting up the app 
 const app = express();
 
