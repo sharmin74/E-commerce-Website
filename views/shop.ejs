@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+
+    <div class="container-fluid mt-5 index-page">
+        <div class="container">
+            <div class="row text-center">
+                <% for ( i=Products.length-1 ; i>= 0 ; i-- ) { %>
+                    <div class="col col-md-3 col-sm-5 col-xs-5">
+                        <div class="cont">
+                            <div class="middle">
+                                <a style="text-decoration:none;" href="/product/<%=Products[i].id%>">
+                                    <div class="text">
+                                        View
+                                    </div>
+                                </a>
+                            </div>
+                            <img class="index-img" src=<%=Products[i].productImage[0] %> alt="product-img">
+                        </div>
+                        <br>
+                        <p class="mt-0">
+                            <span class="font-weight-bold "><%= Products[i].name %></span> <br>
+                            <small>Rs. <%= Products[i].price %></small>
+                        </p>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <%- include("partials/footer") -%>

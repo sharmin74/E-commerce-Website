@@ -1,0 +1,52 @@
+<%- include("partials/header") -%>
+
+    <div class="container search">
+        <div class="row mt-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-4">
+                <h4>SEARCH RESULTS</h4>
+                <% if(Products.length === 1) { %> 
+                    <p class="mb-5"><%= Products.length %> MATCH FOUND</p>
+               <% }else{ %> 
+               <h6 class="mb-5"><%= Products.length %> MATCHES FOUND</h6>
+               <% } %> 
+            </div>
+    
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-3">
+                <form action="/search" method="GET">
+                    <input type="text" name="q">
+                    <button class="btn btn-primary btn-sm" type="submit">
+                        <div class="search-icon">
+                           <i class="fa fa-search"></i>
+                        </div>
+                  </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <% for ( i=Products.length-1 ; i>= 0 ; i-- ) { %>
+                    <div class="col col-md-3 col-sm-5 col-xs-5">
+                        <div class="cont">
+                            <div class="middle">
+                                <a style="text-decoration:none;" href="/product/<%=Products[i].id%>">
+                                    <div class="text">
+                                        View
+                                    </div>
+                                </a>
+                            </div>
+                            <img class="index-img" src=<%=Products[i].productImage[0] %> alt="product-img">
+                        </div>
+                        <br>
+                        <p class="mt-4">
+                            <span class="font-weight-bold "><%= Products[i].name %></span> <br>
+                            <small><%= Products[i].price %></small>
+                        </p>
+                    </div>
+                <!-- </div> -->
+                <% } %>
+        </div>
+    </div>
+
+
+
+    <%- include("partials/footer") -%>
