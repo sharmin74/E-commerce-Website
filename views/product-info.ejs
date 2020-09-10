@@ -52,6 +52,7 @@
                         <i class="fa fa-shopping-cart"></i> 
                         ADD TO CARD
                     </button>
+                    
                 </a>
                 <br>
                 <script src="https://js.stripe.com/v3/"></script>
@@ -183,7 +184,7 @@
           .then(function(result) {
             if (result.error) {
               alert(result.error.message);
-            }
+            } 
           })
           .catch(function(error) {
             console.error('Error:', error);
