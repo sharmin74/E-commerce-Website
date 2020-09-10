@@ -60,7 +60,10 @@ router.get("/product/:id", (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.render('product-info', { Product: foundProduct });
+            res.render('product-info', { 
+                Product: foundProduct,
+                STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY
+             });
         }
     });
 });
@@ -158,6 +161,8 @@ router.get('/eachProduct', (req, res) => {
 // setting up stripe routes 
 router.post("/create-checkout-session", async (req, res) => {
     let createArray = new Promise((resolve, reject) => {
+        let one = req.body.singleProduct;
+        console.log(one);
         let cart = new Cart(req.session.cart);
         let itemArr = cart.generateArray();
         let items = [];
