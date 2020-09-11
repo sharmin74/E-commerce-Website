@@ -162,7 +162,7 @@ router.get('/eachProduct', (req, res) => {
 router.post("/create-checkout-session", async (req, res) => {
     let createArray = new Promise((resolve, reject) => {
         let one = req.body.singleProduct;
-        console.log(one);
+        // console.log(one);
         let cart = new Cart(req.session.cart);
         let itemArr = cart.generateArray();
         let items = [];
@@ -210,14 +210,38 @@ router.post("/create-checkout-session", async (req, res) => {
    
 });
 
-// router.get('/success', (req, res) => {
-//     res.render('result', { result: true });
-// });
+const endpointSecret = process.env.WEBHOOK_SECRET_KEY;
 
-// router.get('/cancel', (req, res) => {
-//     res.render('result', { result: false });                                                                                        
-    
-// });
+const fulfillOrder = (session) => {
+    // TODO: fill me in
+    console.log("Fulfilling order", session);
+  }
+
+// setting up webhooks 
+router.post('/webhook', bodyParser.raw({type: 'application/json'}), (request, response) => {
+    const payload = request.body;
+  
+    // console.log("Got payload: " + payload);
+    const sig = request.headers['stripe-signature'];
+
+    let event;
+  
+    try {
+      event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
+    } catch (err) {
+      return response.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+      // Handle the checkout.session.completed event
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+
+    // Fulfill the purchase...
+    fulfillOrder(session);
+  }
+  
+    response.status(200);
+  });
 
 router.get('/success', (req, res) => {
     res.render('success');
